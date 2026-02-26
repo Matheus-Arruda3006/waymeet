@@ -56,7 +56,7 @@ export const ProfileScreen: React.FC<{ navigation: any }> = ({ navigation }) => 
                             imageStyle={{ borderRadius: 45 }}
                         />
                     </View>
-                    <Text style={styles.name}>{user?.displayName || 'Usuário'}</Text>
+                    <Text style={styles.name}>{user?.displayName || 'User'}</Text>
                     <View style={styles.cityRow}>
                         <Ionicons name="location-outline" size={14} color={Colors.textSecondary} />
                         <Text style={styles.city}>{user?.homeCity || 'Cidade não definida'}</Text>
