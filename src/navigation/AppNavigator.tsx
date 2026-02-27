@@ -38,16 +38,6 @@ const HomeStackScreen = () => (
     </HomeStack.Navigator>
 );
 
-const ExploreStackScreen = () => (
-    <HomeStack.Navigator screenOptions={{ headerShown: false }}>
-        <HomeStack.Screen name="ExploreMain" component={HomeScreen} />
-        <HomeStack.Screen name="ExploreFilters" component={ExploreFiltersModal}
-            options={{ presentation: 'modal' }} />
-        <HomeStack.Screen name="EventDetail" component={EventDetailScreen} />
-        <HomeStack.Screen name="Chat" component={ChatScreen} />
-    </HomeStack.Navigator>
-);
-
 const MapStackScreen = () => (
     <MapStack.Navigator screenOptions={{ headerShown: false }}>
         <MapStack.Screen name="MapMain" component={MapScreen} />
@@ -80,8 +70,7 @@ const MainTabs = () => (
         tabBar={(props) => <CustomTabBar {...props} />}
         screenOptions={{ headerShown: false }}
     >
-        <Tab.Screen name="HomeTab" component={HomeStackScreen} />
-        <Tab.Screen name="ExploreTab" component={ExploreStackScreen} />
+        <Tab.Screen name="ExploreTab" component={HomeStackScreen} />
         <Tab.Screen name="MapTab" component={MapStackScreen} />
         <Tab.Screen name="CommunityTab" component={CommunityStackScreen} />
         <Tab.Screen name="ProfileTab" component={ProfileStackScreen} />
