@@ -134,4 +134,4 @@ export const ExploreFiltersModal: React.FC<{ navigation: any }> = ({ navigation 
             </ScrollView>
         </View>
     );
-};
+};  
