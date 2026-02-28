@@ -32,7 +32,7 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
     }, []);
 
     return (
-        <View className="flex-1 bg-background" style={{ paddingTop: insets.top }}>
+        <View className="flex-1 bg-background">
             <ScrollView
                 showsVerticalScrollIndicator={false}
                 refreshControl={
@@ -43,24 +43,6 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                     />
                 }
             >
-                {/* Top Bar */}
-                <View className="flex-row justify-between items-center px-5 py-3">
-                    <View className="flex-row items-center gap-[5px]">
-                        <Ionicons name="location" size={16} color={Colors.primary} />
-                        <Text className="text-[13px] text-textSecondary font-medium">
-                            Londrina, Brasil
-                        </Text>
-                    </View>
-                    <View className="flex-row gap-2">
-                        <TouchableOpacity className="w-[38px] h-[38px] rounded-full bg-surface justify-center items-center">
-                            <Ionicons name="notifications-outline" size={22} color={Colors.text} />
-                        </TouchableOpacity>
-                        <TouchableOpacity className="w-[38px] h-[38px] rounded-full bg-surface justify-center items-center">
-                            <Ionicons name="chatbubble-ellipses-outline" size={22} color={Colors.text} />
-                        </TouchableOpacity>
-                    </View>
-                </View>
-
                 {/* Search */}
                 <View className="px-5 mb-4">
                     <SearchBar
@@ -80,8 +62,8 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                         <TouchableOpacity
                             key={filter.id}
                             className={`flex-row items-center px-4 py-[10px] rounded-3xl border-[1.5px] gap-[6px] ${activeFilter === filter.id
-                                    ? 'bg-primary border-primary'
-                                    : 'bg-background border-border'
+                                ? 'bg-primary border-primary'
+                                : 'bg-background border-border'
                                 }`}
                             onPress={() => setActiveFilter(activeFilter === filter.id ? null : filter.id)}
                             activeOpacity={0.7}
@@ -89,8 +71,8 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                             <Text className="text-base">{filter.icon}</Text>
                             <Text
                                 className={`text-[13px] font-medium ${activeFilter === filter.id
-                                        ? 'text-textInverse'
-                                        : 'text-text'
+                                    ? 'text-textInverse'
+                                    : 'text-text'
                                     }`}
                             >
                                 {filter.name}
@@ -120,8 +102,8 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                             >
                                 <Text
                                     className={`text-sm pb-[6px] ${activeExploreTab === tab
-                                            ? 'text-text font-bold'
-                                            : 'text-textMuted font-medium'
+                                        ? 'text-text font-bold'
+                                        : 'text-textMuted font-medium'
                                         }`}
                                 >
                                     {tab}
